@@ -4,6 +4,8 @@
 import React, { useState } from "react";
 import { CldUploadWidget, CldImage } from "next-cloudinary";
 
+export const dynamic = 'force-dynamic';
+
 interface CloudinaryResult {
   public_id: string;
 }
