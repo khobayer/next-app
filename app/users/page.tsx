@@ -3,10 +3,16 @@ import UserTable from "./UserTable";
 import Link from "next/link";
 
 interface Props {
-  searchParams: { sortOrder: string };
+  searchParams: Promise<{ sortOrder: string }>;
 }
 
-const UserPage = ({ searchParams: { sortOrder } }: Props) => {
+const UserPage = async (props: Props) => {
+  const searchParams = await props.searchParams;
+
+  const {
+    sortOrder
+  } = searchParams;
+
   return (
     <>
       <h1 className="font-extrabold text-2xl mb-3">Users List</h1>
